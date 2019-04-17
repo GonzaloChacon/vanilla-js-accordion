@@ -16,9 +16,9 @@ const animate = (function() {
     const targetY = document.body.scrollHeight - elementY < window.innerHeight ? document.body.scrollHeight - window.innerHeight : elementY;
     const diff = targetY - startingY;
 
-    const easing = function (t) {
+    const easing = function(t) {
       return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1;
-    }
+    };
 
     let start;
 
@@ -43,7 +43,7 @@ const animate = (function() {
   }
 
   return {
-    scroll
+    scroll,
   };
 })();
 
@@ -56,7 +56,7 @@ const animate = (function() {
 
       ACC_CLASS_ITEM: 'accordion__item',
       ACC_CLASS_LABEL: 'accordion__label',
-      ACC_CLASS_CONTENT: 'accordion__content'
+      ACC_CLASS_CONTENT: 'accordion__content',
     };
 
     constructor(accordion) {
@@ -65,7 +65,7 @@ const animate = (function() {
     }
 
     init() {
-      this.accordion.addEventListener('click', event => {
+      this.accordion.addEventListener('click', (event) => {
         event.stopPropagation();
 
         if (event.target.classList.contains(this.CONFIG.ACC_CLASS_LABEL)) {
@@ -115,15 +115,14 @@ const animate = (function() {
     }
 
     closeAll() {
-      this.accItems.forEach(el => {
+      this.accItems.forEach((el) => {
         this.hideContent(el);
       });
     }
   };
 
   const accordions = document.querySelectorAll('.accordion');
-  accordions.forEach(accordion => {
+  accordions.forEach((accordion) => {
     new Accordion(accordion).init();
   });
-
 })(animate);
