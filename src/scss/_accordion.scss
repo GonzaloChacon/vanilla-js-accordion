@@ -76,3 +76,13 @@
     }
   }
 }
+
+// Firefox fix
+@supports (-moz-appearance:none) {
+  .accordion__content:after {
+    content: "";
+    height: 1px;
+    margin: 10px;
+    display: block;
+  }
+}

@@ -25,17 +25,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-          '<%= grunt.template.today("yyyy-mm-dd") %> */ \n'
-      },
-      targets: {
-        files: {
-          'dist/js/index.min.js': 'dist/js/index.js',
-        }
-      }
-    },
     concat: {
       options: {
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -47,35 +36,12 @@ module.exports = function(grunt) {
         }
       }
     },
-    cssmin: {
-      files: {
-        expand: true,
-        cwd: 'dist/css/',
-        src: ['*.css', '!*.min.css'],
-        dest: 'dist/css/',
-        ext: '.min.css'
-      }
-    },
     copy: {
       main: {
         expand: true,
         src: 'index.html',
         dest: 'dist/',
         cwd: 'src/',
-      }
-    },
-    htmlmin: {
-      dev: {
-        options: {
-          removeComments: true,
-          collapseWhitespace: true
-        },
-        files: [{
-          expand: true,
-          cwd: 'src',
-          src: ['**/*.html', '*.html'],
-          dest: 'dist'
-        }]
       }
     },
     watch: {
@@ -121,6 +87,4 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('default', ['concat', 'sass', 'copy', 'http-server:dev', 'watch']);
-  grunt.registerTask('init', ['concat', 'uglify', 'sass', 'cssmin', 'htmlmin']);
-  grunt.registerTask('build', ['concat', 'uglify', 'sass', 'cssmin', 'htmlmin']);
 }

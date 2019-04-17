@@ -50,25 +50,24 @@ const animate = (function() {
 // Component declaration and instantiations
 (function(animate) {
   class Accordion {
-    CONFIG = {
-      ATTR_EXPANDED: 'aria-expanded',
-      ATTR_HIDDEN: 'aria-hidden',
-
-      ACC_CLASS_ITEM: 'accordion__item',
-      ACC_CLASS_LABEL: 'accordion__label',
-      ACC_CLASS_CONTENT: 'accordion__content',
-    };
-
     constructor(accordion) {
+      this.CONFIG = {
+        ATTR_EXPANDED: 'aria-expanded',
+        ATTR_HIDDEN: 'aria-hidden',
+
+        CLASS_ITEM: 'accordion__item',
+        CLASS_LABEL: 'accordion__label',
+        CLASS_CONTENT: 'accordion__content',
+      };
       this.accordion = accordion;
-      this.accItems = accordion.querySelectorAll(`.${this.CONFIG.ACC_CLASS_ITEM}`);
+      this.accItems = accordion.querySelectorAll(`.${this.CONFIG.CLASS_ITEM}`);
     }
 
     init() {
       this.accordion.addEventListener('click', (event) => {
         event.stopPropagation();
 
-        if (event.target.classList.contains(this.CONFIG.ACC_CLASS_LABEL)) {
+        if (event.target.classList.contains(this.CONFIG.CLASS_LABEL)) {
           const activeItem = event.target.parentNode;
 
           this.toggleClass(activeItem);
@@ -88,22 +87,22 @@ const animate = (function() {
     }
 
     displayContent(el) {
-      const accContent = el.querySelector(`.${this.CONFIG.ACC_CLASS_CONTENT}`);
+      const accContent = el.querySelector(`.${this.CONFIG.CLASS_CONTENT}`);
       accContent.style.height = accContent.scrollHeight + 'px';
       this.setAccessibilityAttrs(el);
     }
 
     hideContent(el) {
-      if (el.querySelector(`.${this.CONFIG.ACC_CLASS_CONTENT}`).style.height) {
+      if (el.querySelector(`.${this.CONFIG.CLASS_CONTENT}`).style.height) {
         el.classList.toggle('active');
       }
-      el.querySelector(`.${this.CONFIG.ACC_CLASS_CONTENT}`).style.height = null;
+      el.querySelector(`.${this.CONFIG.CLASS_CONTENT}`).style.height = null;
       this.setAccessibilityAttrs(el);
     }
 
     setAccessibilityAttrs(el) {
-      const accContent = el.querySelector(`.${this.CONFIG.ACC_CLASS_CONTENT}`);
-      const accLabel = el.querySelector(`.${this.CONFIG.ACC_CLASS_LABEL}`);
+      const accContent = el.querySelector(`.${this.CONFIG.CLASS_CONTENT}`);
+      const accLabel = el.querySelector(`.${this.CONFIG.CLASS_LABEL}`);
 
       if (el.classList.contains('active')) {
         accLabel.setAttribute(this.CONFIG.ATTR_EXPANDED, true);

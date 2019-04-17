@@ -5,8 +5,6 @@
   "author": "Gonzalo Chacon",
   "license": "MIT",
   "scripts": {
-    "init": "grunt init",
-    "build": "grunt build",
     "start": "grunt",
     "lint": "eslint src/js/*.js"
   },
@@ -18,9 +16,6 @@
     "grunt-contrib-concat": "1.0.1",
     "grunt-contrib-connect": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "3.0.0",
-    "grunt-contrib-htmlmin": "3.0.0",
-    "grunt-contrib-uglify": "4.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-http-server": "^2.1.0",
     "grunt-sass": "3.0.2",

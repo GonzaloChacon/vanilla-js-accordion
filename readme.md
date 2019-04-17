@@ -24,8 +24,3 @@ Run lint:
 ```bash
 npm lint
 ```
-
-Build with minification:
-```bash
-npm build
-```
