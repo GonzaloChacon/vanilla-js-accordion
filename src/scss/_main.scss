@@ -27,7 +27,7 @@ main {
 * {
   box-sizing: border-box;
   -webkit-text-size-adjust: none;
-  scrollbar-color: $color-gray-2 transparent;
+  scrollbar-color: $color-gray-v2 transparent;
   scrollbar-width: thin;
 }
 
@@ -41,12 +41,12 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $color-gray-2;
+  background-color: $color-gray-v2;
   cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: $color-gray-2;
+  background: $color-gray-v2;
 }
 
 section {

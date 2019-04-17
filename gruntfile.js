@@ -107,15 +107,12 @@ module.exports = function(grunt) {
           port: 8081,
           host: "0.0.0.0",
           cache: 0,
-          showDir : true,
+          showDir: true,
           autoIndex: true,
           ext: "html",
           runInBackground: true,
           logFn: function(req, res, error) { },
-          openBrowser : false,
-          customPages: {
-              "/readme": "README.md"
-          }
+          openBrowser: true
       }
 
   },
