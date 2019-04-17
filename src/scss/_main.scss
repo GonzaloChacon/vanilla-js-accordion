@@ -15,19 +15,26 @@ body {
   display: flex;
   flex-direction: column;
   font-family: $font-sans;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin: 0;
   min-height: 100vh;
 }
 
 main {
   display: flex;
   flex: 1;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1300px;
+  padding: 30px 30px 0;
+  width: 100%;
 }
 
 * {
   box-sizing: border-box;
   -webkit-text-size-adjust: none;
-  scrollbar-color: $color-gray-v2 transparent;
+  scrollbar-color: $color-bg-2 transparent;
   scrollbar-width: thin;
 }
 
@@ -41,14 +48,30 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $color-gray-v2;
+  background-color: $color-bg-2;
   cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: $color-gray-v2;
+  background: $color-bg-2;
 }
 
-section {
-  width: 50%;
+h1, h2, h3, h4,
+.title {
+  font-family: $font-serif;
+}
+
+.footer {
+  background: $color-bg-2;
+  color: $color-font-light;
+  margin-top: 50px;
+  padding: 8px 20px;
+  text-align: right;
+}
+
+@include notMobile {
+  main {
+    flex-direction: initial;
+    padding: 60px 60px 0;
+  }
 }

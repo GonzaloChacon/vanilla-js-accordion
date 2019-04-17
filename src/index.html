@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>JS accordion</title>
+  <title>JS Accordion</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
@@ -10,155 +10,221 @@
   <meta name="author" content="Gonzalo Chacon">
   <meta name="description" content="Testing JS accordion">
 
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
   <main>
-    <section>
+
+    <!-- Left column content -->
+    <article class="task-info">
+      <header>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_4" x="0px" y="0px" width="150px" viewBox="0 0 64.6 23.4" enable-background="new 0 0 64.6 23.4" xml:space="preserve">
+          <g>
+            <path fill="currentColor" d="M61,0c2,0,3.3,1,3.3,2.5c0,1.1-0.6,1.9-1.8,2.3l0,0v0.1l0.1,0c1.3,0.2,2.1,1.2,2.1,2.4c0,1.8-1.6,3-4.1,3   c-1.2,0-2-0.3-2.5-0.4c0-0.1,0-1.7,0-1.9c0.5,0.2,1.4,0.6,2.3,0.6c1.2,0,1.9-0.6,1.9-1.4c0-1.1-1.1-1.5-2.1-1.5c0,0-0.8,0-0.9,0   c0-0.1,0-1.4,0-1.6c0.1,0,0.9,0,0.9,0c0.9,0,1.9-0.4,1.9-1.2c0-0.7-0.6-1.1-1.6-1.1c-0.8,0-1.6,0.3-2,0.6c0-0.2,0-1.7,0-1.8   C59.2,0.2,60.1,0,61,0z"></path>
+            <path fill="currentColor" d="M15.2,7.3v2.8h2.4V12h-2.4v7c0,1.6,0.5,2.5,1.8,2.5c0.6,0,1-0.1,1.4-0.2l0.1,1.8c-0.5,0.2-1.2,0.3-2.1,0.3   c-1.1,0-2-0.4-2.5-1c-0.6-0.7-0.9-1.9-0.9-3.4V12h-2v-1.8h2V7.3H15.2z"></path>
+            <path fill="currentColor" d="M43.7,7.3v2.8h2.4V12h-2.4v7c0,1.6,0.5,2.5,1.8,2.5c0.6,0,1-0.1,1.4-0.2l0.1,1.8c-0.5,0.2-1.2,0.3-2.1,0.3   c-1.1,0-2-0.4-2.5-1c-0.6-0.7-0.9-1.9-0.9-3.4V12h-2v-1.8h2V7.3H43.7z"></path>
+            <path fill="currentColor" d="M6,12.9c-2.5-1-3.6-1.8-3.6-3.5c0-1.2,0.9-2.7,3.4-2.7c1.6,0,3.1,0.5,3.7,1V5.5c-0.8-0.4-2-0.7-3.6-0.7   C2.4,4.8,0,6.9,0,9.7c0,2.5,1.8,4.1,4.8,5.1c2.4,0.9,3.4,1.9,3.4,3.6c0,1.8-1.4,3.1-3.8,3.1c-1.5,0-3.4-0.5-4.4-1.4v2.4   c1,0.6,2.7,1,4.3,1c4.3,0,6.3-2.4,6.3-5.2C10.6,15.5,9,14.1,6,12.9z"></path>
+            <path fill="currentColor" d="M26.5,9.9c-1.6,0-3,0.9-3.6,2.6h-0.1v-2.4h-2.1v13.2H23v-7.1c0-0.4,0-0.8,0.1-1.1c0.3-1.7,1.5-3,3.2-3   c0.3,0,0.6,0,0.8,0.1V10C26.9,10,26.7,9.9,26.5,9.9z"></path>
+            <path fill="currentColor" d="M33.1,9.8c-1.5,0-3,0.4-4,1l0,1.9c0.8-0.7,2.5-1.2,3.7-1.2c2.5,0,2.7,1.8,2.7,2.9v0.3   c-3.9,0-7.4,1.7-7.4,4.7c0,3.3,2.3,4.1,5.2,4.1c1.7,0,3.3-0.4,4.5-1.1c0,0,0-7.4,0-7.4C37.8,12.4,36.9,9.8,33.1,9.8z M35.5,21.1   c-0.6,0.4-1.4,0.6-2.3,0.6c-1.6,0-3.1-0.5-3.1-2.4c0-2.1,3-3.1,5.4-3L35.5,21.1z"></path>
+            <path fill="currentColor" d="M53.3,9.8c-1.5,0-3,0.4-4,1l0,1.9c0.8-0.7,2.5-1.2,3.7-1.2c2.5,0,2.7,1.8,2.7,2.9v0.3   c-3.9,0-7.4,1.7-7.4,4.7c0,3.3,2.3,4.1,5.2,4.1c1.7,0,3.3-0.4,4.5-1.1c0,0,0-7.4,0-7.4C58,12.4,57.1,9.8,53.3,9.8z M55.7,21.1   c-0.6,0.4-1.4,0.6-2.3,0.6c-1.6,0-3.1-0.5-3.1-2.4c0-2.1,3-3.1,5.4-3L55.7,21.1z"></path>
+          </g>
+        </svg>
+        <h1 class="title">JS Accordion</h1>
+      </header>
+
+      <p>
+        <span class="task-intro">Some notes on the development decisions:</span>
+
+        <ul>
+          <li>The task specifies implementing ES6, reason for which I've implemented ES6 methods instead of more standarized one, for example <span class="code">'[].includes()'</span> isntead of the old way <span class="code">'[].indexOf()'</span>, or <span class="code">'[].forEach()'</span> instead of <span class="code">'for of loop'</span>.</li>
+          <li>Since UI wasn't specified, and I was given a mock, I understood you expect me to deliver the same as the mock, I hope it's okay. I had to open the sketch file into a program to convert it, this is what I saw, not sure if some style was lost in the convertion, I hope not.</li>
+          <li>Grunt tasks are configured, however I'm sure they can be optimized, it has been a couple of years since the last time I've implemented Grunt and Gulp.</li>
+          <li>Inside <span class="code">'index.js'</span> file I've created a module to handle the component class and instantiation, and a module to contain animations. Usually when working in bigger project you separate those in different files but since this is quite small I consider it's better to keep them in the same file in order to be able to see them better together.</li>
+          <li>Most of the animations are made with <span class="code">CSS transitions</span> but since the idea was to handle JS I've handle some from there implementing <span class="code">requestAnimationFrame API</span> to better sync animations into the browser's render cycle.<br>Usually I solve accordions just with CSS, implementing the label and a checkbox technique is enough.</li>
+          <li>If you run <span class="code">'npm audit'</span> you will see some warnings. I had those in other projects, they appear a couple of days ago, so far it seems there is not a version to get ride of those.</li>
+        </ul>
+      </p>
+
+      <p>I hope you like the solution for the task. Please let me know what you think. <span class="code">:)</span>
+      </p>
+
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/gonzalo-chacon/"
+          target="_blank"
+          rel="noopener"
+          title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
+        </a>
+        <a
+          href="https://github.com/GonzaloChacon?tab=repositories"
+          target="_blank"
+          rel="noopener"
+          title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a
+          href="mailto:gonzalochacon@gmail.com"
+          rel="noopener"
+          title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path d="M13.718 10.528c0 .792-.268 1.829-.684 2.642-1.009 1.98-3.063 1.967-3.063-.14 0-.786.27-1.799.687-2.58 1.021-1.925 3.06-1.624 3.06.078zm10.282 1.472c0 6.627-5.373 12-12 12s-12-5.373-12-12 5.373-12 12-12 12 5.373 12 12zm-5-1.194c0-3.246-2.631-5.601-6.256-5.601-4.967 0-7.744 3.149-7.744 7.073 0 3.672 2.467 6.517 7.024 6.517 2.52 0 4.124-.726 5.122-1.288l-.687-.991c-1.022.593-2.251 1.136-4.256 1.136-3.429 0-5.733-2.199-5.733-5.473 0-5.714 6.401-6.758 9.214-5.071 2.624 1.642 2.524 5.578.582 7.083-1.034.826-2.199.799-1.821-.756 0 0 1.212-4.489 1.354-4.975h-1.364l-.271.952c-.278-.785-.943-1.295-1.911-1.295-2.018 0-3.722 2.19-3.722 4.783 0 1.73.913 2.804 2.38 2.804 1.283 0 1.95-.726 2.364-1.373-.3 2.898 5.725 1.557 5.725-3.525z"/></svg>
+        </a>
+      </footer>
+    </article>
+    <!-- end Left column content -->
+
+    <!-- Right column content -->
+    <section class="task-content">
+
+
+      <h4>Accordion 1</h4>
+
       <!-- Accordion -->
       <div class="accordion">
 
-          <div class="accordion__item">
-            <div
-              class="accordion__label"
-              id="accordion-1-label-1"
-              aria-controls="accordion-1-content-1">
-              First accordion is awesome
-            </div>
-            <div
-              id="accordion-1-content-1"
-              class="accordion__content"
-              aria-labelledby="accordion-1-label-1"
-              tabindex="1">
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a egestas elit, quis rhoncus ligula. Aenean accumsan dignissim felis, nec suscipit nunc ullamcorper a. Aliquam nec erat id quam sodales tincidunt id in enim. Phasellus scelerisque leo a suscipit mattis. Nulla rutrum dui tristique felis mattis elementum. Nunc a suscipit metus, nec placerat nunc. Praesent a massa cursus, euismod nunc at, sollicitudin odio. Quisque mattis augue mi, vitae imperdiet elit tincidunt eu. Morbi rutrum nibh quis lacus commodo ultrices quis ut tellus. Proin condimentum tristique risus et tincidunt. Sed magna sapien, elementum quis rutrum ut, venenatis in massa. Integer non auctor lacus, ac tempus tortor. Suspendisse laoreet eros non libero rutrum pretium non vel risus. Proin nec urna viverra, placerat quam a, lacinia turpis. Curabitur justo nisl, varius sed neque eu, bibendum iaculis quam.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a egestas elit, quis rhoncus ligula. Aenean accumsan dignissim felis, nec suscipit nunc ullamcorper a. Aliquam nec erat id quam sodales tincidunt id in enim. Phasellus scelerisque leo a suscipit mattis. Nulla rutrum dui tristique felis mattis elementum. Nunc a suscipit metus, nec placerat nunc. Praesent a massa cursus, euismod nunc at, sollicitudin odio. Quisque mattis augue mi, vitae imperdiet elit tincidunt eu. Morbi rutrum nibh quis lacus commodo ultrices quis ut tellus. Proin condimentum tristique risus et tincidunt. Sed magna sapien, elementum quis rutrum ut, venenatis in massa. Integer non auctor lacus, ac tempus tortor. Suspendisse laoreet eros non libero rutrum pretium non vel risus. Proin nec urna viverra, placerat quam a, lacinia turpis. Curabitur justo nisl, varius sed neque eu, bibendum iaculis quam.
-                </p>
-              </div>
+        <div class="accordion__item">
+          <div
+            class="accordion__label"
+            id="accordion-1-label-1"
+            aria-controls="accordion-1-content-1">
+            First accordion is awesome
+          </div>
+          <div
+            id="accordion-1-content-1"
+            class="accordion__content"
+            aria-labelledby="accordion-1-label-1"
+            tabindex="1">
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a egestas elit, quis rhoncus ligula. Aenean accumsan dignissim felis, nec suscipit nunc ullamcorper a. Aliquam nec erat id quam sodales tincidunt id in enim. Phasellus scelerisque leo a suscipit mattis. Nulla rutrum dui tristique felis mattis elementum. Nunc a suscipit metus, nec placerat nunc. Praesent a massa cursus, euismod nunc at, sollicitudin odio. Quisque mattis augue mi, vitae imperdiet elit tincidunt eu. Morbi rutrum nibh quis lacus commodo ultrices quis ut tellus. Proin condimentum tristique risus et tincidunt. Sed magna sapien, elementum quis rutrum ut, venenatis in massa. Integer non auctor lacus, ac tempus tortor. Suspendisse laoreet eros non libero rutrum pretium non vel risus. Proin nec urna viverra, placerat quam a, lacinia turpis. Curabitur justo nisl, varius sed neque eu, bibendum iaculis quam.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a egestas elit, quis rhoncus ligula. Aenean accumsan dignissim felis, nec suscipit nunc ullamcorper a. Aliquam nec erat id quam sodales tincidunt id in enim. Phasellus scelerisque leo a suscipit mattis. Nulla rutrum dui tristique felis mattis elementum. Nunc a suscipit metus, nec placerat nunc. Praesent a massa cursus, euismod nunc at, sollicitudin odio. Quisque mattis augue mi, vitae imperdiet elit tincidunt eu. Morbi rutrum nibh quis lacus commodo ultrices quis ut tellus. Proin condimentum tristique risus et tincidunt. Sed magna sapien, elementum quis rutrum ut, venenatis in massa. Integer non auctor lacus, ac tempus tortor. Suspendisse laoreet eros non libero rutrum pretium non vel risus. Proin nec urna viverra, placerat quam a, lacinia turpis. Curabitur justo nisl, varius sed neque eu, bibendum iaculis quam.
+              </p>
             </div>
           </div>
-
-          <div class="accordion__item">
-            <div
-              class="accordion__label"
-              id="accordion-1-label-2"
-              aria-controls="accordion-1-content-2">
-              Yes, it is
-            </div>
-            <div
-              id="accordion-1-content-2"
-              class="accordion__content"
-              aria-labelledby="accordion-1-label-2"
-              tabindex="2">
-              <div>
-                <p>
-                  Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer non nulla dapibus nulla vulputate gravida sed in lacus. Cras eu accumsan lectus, sollicitudin aliquet quam. Nunc accumsan risus ante, at iaculis quam sodales sagittis. Morbi nisl lectus, tincidunt vel ante sit amet, cursus tincidunt enim. Suspendisse fermentum tempor justo eget imperdiet. Suspendisse vulputate elementum odio, eu molestie diam dapibus id. Sed enim dui, tristique ac lorem et, varius pellentesque turpis. Etiam non vehicula orci, id ultricies purus. Pellentesque eu malesuada magna. Duis porttitor varius ipsum, sed placerat nisi interdum non. Nullam imperdiet, augue vel malesuada ultricies, orci libero scelerisque nulla, vel ullamcorper nisl dolor quis nunc. Vestibulum commodo ligula sit amet semper finibus.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion__item">
-            <div
-              class="accordion__label"
-              id="accordion-1-label-3"
-              aria-controls="accordion-1-content-3">
-              For sure
-            </div>
-            <div
-              id="accordion-1-content-3"
-              class="accordion__content"
-              aria-labelledby="accordion-1-label-3"
-              tabindex="3">
-              <div>
-                <p>
-                  Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer non nulla dapibus nulla vulputate gravida sed in lacus. Cras eu accumsan lectus, sollicitudin aliquet quam. Nunc accumsan risus ante, at iaculis quam sodales sagittis. Morbi nisl lectus, tincidunt vel ante sit amet, cursus tincidunt enim. Suspendisse fermentum tempor justo eget imperdiet. Suspendisse vulputate elementum odio, eu molestie diam dapibus id. Sed enim dui, tristique ac lorem et, varius pellentesque turpis. Etiam non vehicula orci, id ultricies purus. Pellentesque eu malesuada magna. Duis porttitor varius ipsum, sed placerat nisi interdum non. Nullam imperdiet, augue vel malesuada ultricies, orci libero scelerisque nulla, vel ullamcorper nisl dolor quis nunc. Vestibulum commodo ligula sit amet semper finibus.
-                </p>
-              </div>
-            </div>
-          </div>
-
         </div>
-        <!-- end Accordion -->
 
-
-        <h4>Accordion 2</h4>
-
-        <!-- Accordion -->
-        <div class="accordion">
-
-          <div class="accordion__item">
-            <div
-              class="accordion__label"
-              id="accordion-2-label-1"
-              aria-controls="accordion-2-content-1">
-              Na!, accordion two is better
-            </div>
-            <div
-              id="accordion-2-content-1"
-              class="accordion__content"
-              aria-labelledby="accordion-2-label-1"
-              tabindex="1">
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a egestas elit, quis rhoncus ligula. Aenean accumsan dignissim felis, nec suscipit nunc ullamcorper a. Aliquam nec erat id quam sodales tincidunt id in enim. Phasellus scelerisque leo a suscipit mattis. Nulla rutrum dui tristique felis mattis elementum. Nunc a suscipit metus, nec placerat nunc. Praesent a massa cursus, euismod nunc at, sollicitudin odio. Quisque mattis augue mi, vitae imperdiet elit tincidunt eu. Morbi rutrum nibh quis lacus commodo ultrices quis ut tellus. Proin condimentum tristique risus et tincidunt. Sed magna sapien, elementum quis rutrum ut, venenatis in massa. Integer non auctor lacus, ac tempus tortor. Suspendisse laoreet eros non libero rutrum pretium non vel risus. Proin nec urna viverra, placerat quam a, lacinia turpis. Curabitur justo nisl, varius sed neque eu, bibendum iaculis quam.
-                </p>
-              </div>
+        <div class="accordion__item">
+          <div
+            class="accordion__label"
+            id="accordion-1-label-2"
+            aria-controls="accordion-1-content-2">
+            Yes, it is
+          </div>
+          <div
+            id="accordion-1-content-2"
+            class="accordion__content"
+            aria-labelledby="accordion-1-label-2"
+            tabindex="2">
+            <div>
+              <p>
+                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer non nulla dapibus nulla vulputate gravida sed in lacus. Cras eu accumsan lectus, sollicitudin aliquet quam. Nunc accumsan risus ante, at iaculis quam sodales sagittis. Morbi nisl lectus, tincidunt vel ante sit amet, cursus tincidunt enim. Suspendisse fermentum tempor justo eget imperdiet. Suspendisse vulputate elementum odio, eu molestie diam dapibus id. Sed enim dui, tristique ac lorem et, varius pellentesque turpis. Etiam non vehicula orci, id ultricies purus. Pellentesque eu malesuada magna. Duis porttitor varius ipsum, sed placerat nisi interdum non. Nullam imperdiet, augue vel malesuada ultricies, orci libero scelerisque nulla, vel ullamcorper nisl dolor quis nunc. Vestibulum commodo ligula sit amet semper finibus.
+              </p>
             </div>
           </div>
-
-          <div class="accordion__item">
-            <div
-              class="accordion__label"
-              id="accordion-2-label-2"
-              aria-controls="accordion-2-content-2">
-              ...and more fancy ;)
-            </div>
-            <div
-              id="accordion-2-content-2"
-              class="accordion__content"
-              aria-labelledby="accordion-2-label-2"
-              tabindex="2">
-              <div>
-                <p>
-                  No, I'm kidding, they all have the same level of "fancyness" :)
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion__item">
-            <div
-              class="accordion__label"
-              id="accordion-2-label-3"
-              aria-controls="accordion-2-content-3">
-              But labels can handle long texts, for example if I wanna say "lalalalalalalalalalalalalalalala"
-            </div>
-            <div
-              id="accordion-2-content-3"
-              class="accordion__content"
-              aria-labelledby="accordion-2-label-3"
-              tabindex="2">
-              <div>
-                <p>
-                  "lalalalalalala"... see? :)
-                </p>
-              </div>
-            </div>
-          </div>
-
         </div>
-        <!-- end Accordion -->
+
+        <div class="accordion__item">
+          <div
+            class="accordion__label"
+            id="accordion-1-label-3"
+            aria-controls="accordion-1-content-3">
+            For sure
+          </div>
+          <div
+            id="accordion-1-content-3"
+            class="accordion__content"
+            aria-labelledby="accordion-1-label-3"
+            tabindex="3">
+            <div>
+              <p>
+                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer non nulla dapibus nulla vulputate gravida sed in lacus. Cras eu accumsan lectus, sollicitudin aliquet quam. Nunc accumsan risus ante, at iaculis quam sodales sagittis. Morbi nisl lectus, tincidunt vel ante sit amet, cursus tincidunt enim. Suspendisse fermentum tempor justo eget imperdiet. Suspendisse vulputate elementum odio, eu molestie diam dapibus id. Sed enim dui, tristique ac lorem et, varius pellentesque turpis. Etiam non vehicula orci, id ultricies purus. Pellentesque eu malesuada magna. Duis porttitor varius ipsum, sed placerat nisi interdum non. Nullam imperdiet, augue vel malesuada ultricies, orci libero scelerisque nulla, vel ullamcorper nisl dolor quis nunc. Vestibulum commodo ligula sit amet semper finibus.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- end Accordion -->
+
+
+      <h4>Accordion 2</h4>
+
+      <!-- Accordion -->
+      <div class="accordion">
+
+        <div class="accordion__item">
+          <div
+            class="accordion__label"
+            id="accordion-2-label-1"
+            aria-controls="accordion-2-content-1">
+            Na!, accordion two is better
+          </div>
+          <div
+            id="accordion-2-content-1"
+            class="accordion__content"
+            aria-labelledby="accordion-2-label-1"
+            tabindex="1">
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a egestas elit, quis rhoncus ligula. Aenean accumsan dignissim felis, nec suscipit nunc ullamcorper a. Aliquam nec erat id quam sodales tincidunt id in enim. Phasellus scelerisque leo a suscipit mattis. Nulla rutrum dui tristique felis mattis elementum. Nunc a suscipit metus, nec placerat nunc. Praesent a massa cursus, euismod nunc at, sollicitudin odio. Quisque mattis augue mi, vitae imperdiet elit tincidunt eu. Morbi rutrum nibh quis lacus commodo ultrices quis ut tellus. Proin condimentum tristique risus et tincidunt. Sed magna sapien, elementum quis rutrum ut, venenatis in massa. Integer non auctor lacus, ac tempus tortor. Suspendisse laoreet eros non libero rutrum pretium non vel risus. Proin nec urna viverra, placerat quam a, lacinia turpis. Curabitur justo nisl, varius sed neque eu, bibendum iaculis quam.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <div
+            class="accordion__label"
+            id="accordion-2-label-2"
+            aria-controls="accordion-2-content-2">
+            ...and more fancy ;)
+          </div>
+          <div
+            id="accordion-2-content-2"
+            class="accordion__content"
+            aria-labelledby="accordion-2-label-2"
+            tabindex="2">
+            <div>
+              <p>
+                No, I'm kidding, they all have the same level of "fancyness" :)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <div
+            class="accordion__label"
+            id="accordion-2-label-3"
+            aria-controls="accordion-2-content-3">
+            But labels can handle long texts, for example if I wanna say "lalalalalalalalalalalalalalalala"
+          </div>
+          <div
+            id="accordion-2-content-3"
+            class="accordion__content"
+            aria-labelledby="accordion-2-label-3"
+            tabindex="2">
+            <div>
+              <p>
+                "lalalalalalala"... see? :)
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- end Accordion -->
+
     </section>
+    <!-- end Right column content -->
   </main>
 
-  <footer>
-    some footer
+  <footer class="footer">
+    Gonzalo Chacon - 2019
   </footer>
 
   <script src="js/index.js"></script>

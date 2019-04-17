@@ -1,0 +1,105 @@
+.task-info {
+  width: 100%;
+
+  h1 {
+    color: $color-primary;
+    display: inline-block;
+  }
+
+  header {
+    margin-bottom: 15px;
+  }
+
+  svg {
+    max-width: 110px;
+  }
+
+  .task-intro {
+    font-size: 1.7rem;
+  }
+
+  .code {
+    color: $color-primary;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 15px;
+
+    li {
+      margin: 15px 0;
+      position: relative;
+
+      &:before {
+        background: $color-primary;
+        border-radius: 50%;
+        content: '';
+        height: 6px;
+        left: -17px;
+        position: absolute;
+        top: 8px;
+        width: 6px;
+      }
+    }
+  }
+
+  p:last-of-type {
+    border-top: 1px dashed $color-font-light;
+    color: $color-font-light;
+    font-style: italic;
+    margin: 30px 0;
+    padding-top: 30px;
+  }
+
+  footer {
+    text-align: center;
+
+    a {
+      margin: 0 5px;
+      text-decoration: none;
+      svg {
+        fill: $color-font-light;
+        transition: fill .2s ease-in-out;
+      }
+    }
+
+    a:hover svg {
+      fill: $color-primary;
+    }
+  }
+}
+
+.task-content {
+  width: 100%;
+
+  h4 {
+    border-bottom: 1px dashed $color-font-light;
+    font-style: italic;
+    padding: 10px;
+  }
+}
+
+@include notMobile {
+  .task-info {
+    padding-right: 60px;
+    width: 35%;
+
+    header {
+      margin-bottom: 30px;
+    }
+
+    svg {
+      max-width: 150px;
+    }
+
+    ul {
+      li {
+        margin: 13px 0;
+      }
+    }
+  }
+
+  .task-content {
+    width: 60%;
+  }
+}

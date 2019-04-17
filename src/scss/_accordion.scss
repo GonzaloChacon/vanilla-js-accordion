@@ -12,8 +12,8 @@
     overflow: hidden;
     position: relative;
 
-    &.active &__label {
-      @extend &__label:hover;
+    &.active .accordion__label {
+      @extend .accordion__label:hover;
     }
   }
 
@@ -25,7 +25,7 @@
     left: 0;
     margin-bottom: 10px;
     overflow: hidden;
-    padding: 20px;
+    padding: 20px 60px 20px 20px;
     position: relative;
     right: 0;
     text-overflow: ellipsis;
