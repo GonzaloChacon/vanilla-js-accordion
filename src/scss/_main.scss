@@ -1,0 +1,54 @@
+html {
+  /*
+   * Setup font size to 62.5% is equal to 10px,
+   * this way we can implement rem and px sizes in
+   * equivalent number, for example, giving the value 1.2
+   * to the "rem-px" mixing the result will be 12px and 1.2rem
+   */
+  font-size: 62.5% !important;
+}
+
+html,
+body {
+  background: $color-bg;
+  color: $color-font;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-sans;
+  font-size: 1.2rem;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: none;
+  scrollbar-color: $color-gray-2 transparent;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-gray-2;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: $color-gray-2;
+}
+
+section {
+  width: 50%;
+}

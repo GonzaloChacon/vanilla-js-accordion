@@ -1,0 +1,30 @@
+{
+  "name": "vanilla-js-accordion",
+  "version": "1.0.0",
+  "description": "Simple vanilla JS accordion",
+  "author": "Gonzalo Chacon",
+  "license": "MIT",
+  "scripts": {
+    "init": "grunt init",
+    "build": "grunt build",
+    "start": "grunt",
+    "lint": "eslint src/js/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.12.0",
+    "grunt": "^1.0.4",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-connect": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "3.0.0",
+    "grunt-contrib-htmlmin": "3.0.0",
+    "grunt-contrib-uglify": "4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-http-server": "^2.1.0",
+    "grunt-sass": "3.0.2",
+    "matchdep": "2.0.0",
+    "node-sass": "4.11.0"
+  },
+  "dependencies": {}
+}
