@@ -7,12 +7,12 @@ const animate = (function() {
    * scroll() - Scroll window implementing requestAnimationFrame
    * in order to make animation in the next browser repaint.
    *
-   * @param {numbe} elementTop - Position of the element to scroll to.
+   * @param {object} el - Instance of the element to scroll to.
    **/
-  function scroll(elementTop) {
+  function scroll(el) {
     const duration = 300;
     const startingY = window.pageYOffset;
-    const elementY = window.pageYOffset + elementTop;
+    const elementY = window.pageYOffset + el.getBoundingClientRect().top;
     const targetY = document.body.scrollHeight - elementY < window.innerHeight ? document.body.scrollHeight - window.innerHeight : elementY;
     const diff = targetY - startingY;
 
@@ -80,7 +80,13 @@ const animate = (function() {
         this.hideContent(el);
       } else {
         this.closeAll();
-        animate.scroll(el.getBoundingClientRect().top);
+        /*
+         * We need to set a timeou in order to give time to CSS to finish
+         * Otherwise make calculations is very inexact.
+         */
+        setTimeout(() => {
+          animate.scroll(el);
+        }, 200);
         el.classList.add('active');
         this.displayContent(el);
       }
