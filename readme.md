@@ -22,5 +22,5 @@ this will open a window in the browser at `http://0.0.0.0:8081/`
 
 Run lint:
 ```bash
-npm lint
+npm run lint
 ```
