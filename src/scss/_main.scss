@@ -71,7 +71,7 @@ h1, h2, h3, h4,
 
 @include notMobile {
   main {
-    flex-direction: initial;
+    flex-direction: row;
     padding: 60px 60px 0;
   }
 }
